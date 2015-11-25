@@ -1,52 +1,259 @@
 <!doctype html>
-<html>
+<html lang="en">
+
 	<head>
-
 		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="chrome=1">
-		<title>reveal.js - The HTML Presentations Framework</title>
 
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/main.css">
+		<title>Leonardo - your mocking ninja!</title>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
 
 		<!--[if lt IE 9]>
-		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
-
 	</head>
+
 	<body>
-		<div class="wrapper">
 
-			<header>
+		<div class="reveal">
 
-				<h1>reveal.js</h1>
-				<p>
-					The HTML Presentation Framework &mdash; Site coming soon
-				</p>
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Leonardo</h1>
+					<h3>Your mocking ninja</h3>
+					<p>
+						<small>A talk by <a href="http://www.sagivfrankel.com/" target="_blank">Sagiv Frankel</a> & <a href="http://twitter.com/hakimel" target="_blank">David Buchbut</a></small>
+						<br/>
+						<br/>
+						<a href="http://outbrain.github.io/Leonardo/" target="_blank">Home Page</a><br/>
+						<a href="https://github.com/outbrain/Leonardo" target="_blank">Github</a><br/>
+						<a href="http://outbrain.github.io/Leonardo/examples/angularIL/" target="_blank">Demo</a>
+						<br/>
+						<br/>
+						sagivf@gmail.com
+						<br/>
+						dbuchbut@outbrain.com
+					</p>
+          <aside class="notes">
+            I am David Buchbut, a team lead at outbrain selfserve team, i am
+            going to talk about leonardo together with Sagiv Frankel who
+            started Leonardo,
+            In order to explain what problem Leonardo is here to solve let me
+            start by describing how my day looked like when I joined Outbrain
+          </aside>
+				</section>
 
-			</header>
+				<section>
+					<h2>How I start my day</h2>
+          <pre><code>
+            $ svn up
+            $ mvn-all
 
-			<footer>
+            IntelliJ Reimport projects
+          </code>
+					</pre>
 
-				<p>
-					<a href="http://lab.hakim.se/reveal-js">Try the demo</a>
-					<a href="https://github.com/hakimel/reveal.js/releases">Download</a>
-				</p>
+				</section>
 
-			</footer>
+				<section>
+					<h2>Cross Fingers</h2>
+					<img
+          src="https://themultifacetsofblujewel.files.wordpress.com/2014/06/little-girl-finger-crossed.jpg">
+
+					<aside class="notes">
+					    in many cases something failed which can take much more than
+					    that, 1. bad commit, trunk is broken 2. internet connection is
+					    down can't download new extenral jars
+					</aside>
+				</section>
+
+				<section>
+					<h2>Bring up different services</h2>
+          <pre><code>
+            $ ./run-ob1k Amelia
+            $ ./run-ob1k www
+            $ ./run-ob1k Eve
+            $ ./run-ob1k AmplifyApp
+          </code>
+					</pre>
+					<aside class="notes">
+					  Micro app
+					  Eve is for sales force
+          </aside>
+				</section>
+
+				<section>
+					<h2>Cross Fingers</h2>
+					<img
+          src="https://themultifacetsofblujewel.files.wordpress.com/2014/06/little-girl-finger-crossed.jpg">
+				</section>
+				<section>
+					<h2>Leonardo is all about efficiency</h2>
+          <p>We write 70% - 80% client code</p>
+          <p>What if we didn't need a server???</p>
+        </section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<!--section>
+						<h2>Start working</h2>
+						<p>
+              Most features have server and client components
+            </p>
+					</section>
+					<section>
+						<h2>Develope client and server in paralel</h2>
+            <p>
+              <pre><code>
+                angular.module('myApp')
+                  .service('campaignService', function ($http, $q) {
+                    this.getPromotedLinks = function (campaignId) {
+                      /* return $http.get('api/promoted-links', data: {
+                         campaignId: campaignId
+                      */})
+                      return $q.when({
+                        data: ['first', 'second', 'third', 'fourth']
+                      })
+                    };
+                  });
+              </code></pre> 
+            </p>
+					</section-->
+					<section>
+						<h2>3 Big problems leonardo solves</h2>
+					</section>
+					<section>
+						<h2>Develope client and server in paralel</h2>
+            <p>
+              <pre><code>
+                angular.module('myApp')
+                  .service('campaignService', function ($http, $q) {
+                    this.getPromotedLinks = function (campaignId) {
+                      /* return $http.get('api/promoted-links', data: {
+                         campaignId: campaignId
+                      */})
+                      return $q.when({
+                        data: ['first', 'second', 'third', 'fourth']
+                      })
+                    };
+                  });
+              </code></pre> 
+            </p>
+					</section>
+					<section>
+						<h3>data size, delays, response types and
+						complicated scenarios</h3>
+            <ul>
+              <li>No data</li>
+              <li>Little data</li>
+              <li>A lot of data</li>
+              <li>Short delay</li>
+              <li>Long delay</li>
+              <li>Error Response Types: 500, 401, 413 etc...</li>
+              <li>Recreate complicated scenarios</li>
+            </ul>
+            <aside class="notes">
+              creating complicated senarios, so you don't need to recreate and
+              get a fast feedback from product
+              e2e tests - dry concept
+            </aside>
+					</section>
+					<section>
+						<h3>2. Fast feedback from product - Prototyping</h3>
+            <p>Send product a url with leonardo turned on and create a scenario
+            for them</p>
+            <aside class="notes">
+              Can easily send product url whith Leonardo installed so they can
+              see the behavior for themselves, scenarios
+              Spoiler???
+            </aside>
+          </section>
+					<section>
+						<h3>3. Dry e2e tests</h3>
+            <p>Don't repeat yourself through your entire development stack.</p>
+						<br/>
+						<p>When writing big apps your mocking should be as much a part of your development as anything else.</p>
+						<br/>
+						<p> </p>
+            <aside class="notes">
+            </aside>
+          </section>
+					<section>
+						<h2>Leonardo to the rescue</h2>
+            <img height="500px" src="http://www.turtletopia.com/wp-content/uploads/2013/10/Leonardo-Teenage-Mutant-Ninja-Turtle-Costume.jpg">
+					</section>
+				</section>
+
+				<section>
+					<h1>Outbrain is hiring!</h1>
+					<a href="http://outbrain.mytribehr.com/careers" target="_blank">Join Us</a>
+				</section>
+
+				<section>
+					<h1>THE END</h1>
+          <h3>BY David Buchbut and Sagiv Frankel</h3>
+				</section>
+
+			</div>
 
 		</div>
 
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
 
-		  ga('create', 'UA-43375306-1', 'revealjs.com');
-		  ga('send', 'pageview');
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
 		</script>
+
 	</body>
 </html>
